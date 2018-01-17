@@ -1,0 +1,549 @@
+----------------------HTML-------------------------
+
+h1 Very simple jQuery Tic Tac Toe
+div.box
+div.messages
+div.turn
+table
+  tr
+    td.item1
+      div.line2
+      div.line1
+    td.item2
+      div.line6
+    td.item3
+      div.line7
+  tr
+    td.item4
+      div.line4
+    td.item5
+      div.line8
+      div.line3
+    td.item6
+  tr
+    td.item7
+      div.line5
+    td.item8
+    td.item9
+
+br
+div.go
+br
+input.reset type="button" value="Reset"
+br
+br
+h2.left Current Game Stats
+div.arraydisplay
+div.score1
+div.board1
+div.board2
+h2.right Championship Stats
+
+button#myBtn Championship Stats
+
+#myModal.modal
+
+  .modal-content
+    .modal-header
+      span.close &times;
+      h2.inside Championship Stats
+    .modal-body
+    br
+    br
+      div.id1
+      br
+      div.id2
+      br
+      br
+      br
+    .modal-footer
+      h3 Who Will Claim The Title Of Champion??
+----------------------CSS-------------------------
+
+body {
+  font-family:"Roboto", Arial, sans-serif;
+  margin:0 auto;
+  text-align:center;
+  margin-top:50px;
+  color:#FFF;
+  text-shadow:-1px -1px #333;
+  background:#333;
+  h1 {
+    font-weight:bold;
+    color:#D8BFD8;
+    padding-bottom:20px;
+    padding-top:-15px;
+  }
+  .turn {
+    margin-bottom:10px;
+  }
+  table {
+    border-collapse:collapse;
+    width:225px;
+    margin:0 auto;
+    td {
+      width:50px;
+      height:75px;
+      border:1px solid #555;
+      cursor:pointer;
+      position:relative;
+      
+      &:before {
+        font-size:3.5em;
+        line-height:1;
+      }
+      &.cross:before {
+        content:"x";
+        color:lightblue;
+      }
+      &.circle:before {
+        content:"o";
+        color:pink;
+      }
+      .line1{
+width: 180px;
+height: 47px;
+border-bottom: 4px solid white;
+position: absolute;
+     left:19px;
+     top:-8px;
+z-index:1;
+  }
+        
+    .line2{
+width: 190px;
+height: 47px;
+border-bottom: 4px solid white;
+transform: rotate(90deg);
+position: absolute;
+     left:-34px;
+     top:95px;
+z-index:1;
+  }
+      .line3{
+width: 225px;
+height: 47px;
+border-bottom: 4px solid white;
+transform: rotate(45deg);
+position: absolute;
+     left:-60px;
+     top:-5px;
+z-index:1;
+  }
+      
+      .line4{
+width: 180px;
+height: 47px;
+border-bottom: 4px solid white;
+position: absolute;
+     left:19px;
+     top:-8px;
+z-index:1;
+
+  }
+  .line5{
+width: 180px;
+height: 47px;
+border-bottom: 4px solid white;
+position: absolute;
+     left:19px;
+     top:-8px;
+z-index:1;
+  }    
+    .line6{
+width: 190px;
+height: 47px;
+border-bottom: 4px solid white;
+transform: rotate(90deg);
+position: absolute;
+     left:-34px;
+     top:95px;
+z-index:1;
+  }
+    .line7{
+width: 190px;
+height: 47px;
+border-bottom: 4px solid white;
+transform: rotate(90deg);
+position: absolute;
+     left:-34px;
+     top:95px;
+z-index:1;
+  }
+      .line8{
+width: 225px;
+height: 47px;
+border-bottom: 4px solid white;
+transform: rotate(-47deg);
+position: absolute;
+     left:-95px;
+     top:5px;
+z-index:1;
+  }
+    }
+    
+  }
+  .reset {
+    background:#555;
+    border:1px solid #333;
+    padding:5px 10px;
+    color:#FFF;
+    cursor:pointer;
+    font-family:"Roboto", Arial, sans-serif;
+    text-transform:uppercase;
+    &:hover {
+      opacity:0.8;
+    }
+  }
+
+.modal {
+    display: none;
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+
+.modal-content {
+    position: relative;
+    color: white;
+    background-color: #333;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #333;
+    width: 30%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #333;
+    color: white;
+    font-family:"Roboto", Arial, sans-serif;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color:#333;
+    color: white;
+    font-family:"Roboto", Arial, sans-serif;
+}
+#myBtn {
+    background:#555;
+    border:1px solid #333;
+    padding:5px 10px;
+    color:#FFF;
+    cursor:pointer;
+    font-family:"Roboto", Arial, sans-serif;
+    text-transform:uppercase;
+    &:hover {
+      opacity:0.8;
+    }
+  }  
+  .left{
+    position:absolute;
+    left:270px;
+    top:132px;
+    }
+  .right{
+    position:absolute;
+    right:270px;
+    top:130px;
+  }
+ 
+  .score1{
+    position:absolute;
+    left:320px;
+    top:200px;
+    
+  }
+  #myBtn{
+    position:absolute;
+    right:300px;
+    top:200px;
+    
+  }
+ 
+  .id2{
+    color:pink;
+    font-size:2.0em;
+  }
+  .id1{
+    color:lightblue;
+    font-size:2.0em;
+  }
+  .inside{
+    color:gold;
+    font-size:2.5em;
+  }
+}
+---------------------------JS------------------------
+
+var arr = [];
+var score = 0;
+var scoreBoard1 = 0;
+var scoreBoard1b = 0;
+var scoreBoard1c = 0;
+var scoreBoard2 = 0;
+var scoreBoard2b = 0;
+var scoreBoard2c = 0;
+var win = 0;
+
+$( ".line1" ).hide();
+$( ".line2" ).hide();
+$( ".line3" ).hide();
+$( ".line4" ).hide();
+$( ".line5" ).hide();
+$( ".line6" ).hide();
+$( ".line7" ).hide();
+$( ".line8" ).hide();
+
+var arraydisplay = $('.arraydisplay');
+arraydisplay.html('Click Reset to start Timer');
+var score1 = $( ".score1" );
+score1.html('Total moves: '+score);
+
+var modal = document.getElementById('myModal');
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+span.onclick = function() {
+    modal.style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+$(function() {
+  var startTime = Date.now();
+  var player = 2;
+  var table = $('table');
+  var messages = $('.messages');
+  var turn = $('.turn');
+  displayNextPlayer(turn, player);
+  
+  
+  //---------------------------
+  
+  $('td').click(function() {
+    //-------------time 
+var endTime = Date.now();
+    var difference = endTime - startTime;
+    arr.push(difference);
+    let x = arr.filter((element, index) => {
+  			return index % 2 === 0;
+				})
+    var sum = x.reduce(add, 0)/x.length;
+
+        function add(a, b) {
+            return a + b;
+        }
+    var arraydisplay = $('.arraydisplay');
+    arraydisplay.html('Average move time: '+ parseFloat((sum/1000)).toFixed(2) + ' seconds.');
+    ///--timer end
+    //----------clickCount
+    
+    score +=1;
+    var score1 = $( ".score1" );
+    score1.html('Total moves: '+score);
+
+    //----clickcount end
+    
+    td = $(this);
+    var state = getState(td);
+    if(!state) {
+      var pattern = definePatternForCurrentPlayer(player);
+      changeState(td, pattern);
+      if(checkIfPlayerWon(table, pattern)) {
+        messages.html('Player '+player+' has won.');
+        turn.html('');
+        
+        //--Championship stats
+       
+        
+        var id1 = $( '.id1' );
+        var id2 = $( '.id2' );
+        
+        if(player == 2){
+          scoreBoard1 += 1;
+          scoreBoard2b += 1;
+          id1.html('Player 2 > wins: '+ scoreBoard1 + '   losses:           '+scoreBoard1b);
+          id2.html('Player 1 > wins: '+ scoreBoard2 + '   losses:           '+scoreBoard2b);
+        }
+        if(player == 1){
+          scoreBoard2 += 1;
+          scoreBoard1b += 1;
+          id2.html('Player 1 > Wins: '+ scoreBoard2 + '   Losses:           '+scoreBoard2b+'');
+          id1.html('Player 2 > Wins: '+ scoreBoard1 + '   Losses:           '+scoreBoard1b+'');
+          }
+        
+        //--end
+        
+      } else {
+        player = setNextPlayer(player);
+        displayNextPlayer(turn, player);
+
+      }
+    } else {
+      messages.html('This box is already checked.');
+    }
+  });
+  
+  //---------------------------
+  
+  $('.reset').click(function() {
+    player = 2;
+    messages.html('');
+    reset(table);
+    displayNextPlayer(turn, player);
+    reset1();
+    
+  });
+
+  function reset1() {
+    arr =[];
+    startTime = Date.now();
+    score = 0;
+    score2 = 0;
+    var go = $('.go');
+    go.html('GO!');
+    
+    var score1 = $( ".score1" );
+    score1.html('Total moves: '+score);
+    }
+    
+});
+
+//---------------------------
+
+function getState(td) {
+  if(td.hasClass('cross') || td.hasClass('circle')) {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+
+//---------------------------
+
+function changeState(td, pattern) {
+  return td.addClass(pattern);
+}
+
+//---------------------------
+
+function definePatternForCurrentPlayer(player) {
+  if(player == 2) {
+    return 'cross';
+  } else {
+    return 'circle';
+  }
+}
+
+//---------------------------
+
+function setNextPlayer(player) {
+  if(player == 2) {
+    return player = 1;
+  } else {
+    return player = 2;
+  }
+}
+
+//---------------------------
+
+function displayNextPlayer(turn, player) {
+  turn.html('Player turn : '+player);
+}
+
+//--------------------//
+
+function checkIfPlayerWon(table, pattern) {
+  var won = 0;
+  if(table.find('.item1').hasClass(pattern) && table.find('.item2').hasClass(pattern) && table.find('.item3').hasClass(pattern)) {
+    $( ".line1" ).fadeIn("slow");
+    won = 1;
+  } else if (table.find('.item1').hasClass(pattern) && table.find('.item4').hasClass(pattern) && table.find('.item7').hasClass(pattern)) {
+    $( ".line2" ).fadeIn("slow");
+    won = 1;
+  } else if (table.find('.item1').hasClass(pattern) && table.find('.item5').hasClass(pattern) && table.find('.item9').hasClass(pattern)) {
+    $( ".line3" ).fadeIn("slow");
+    won = 1;
+  } else if (table.find('.item4').hasClass(pattern) && table.find('.item5').hasClass(pattern) && table.find('.item6').hasClass(pattern)) {
+    $( ".line4" ).fadeIn("slow");
+    won = 1;
+  } else if (table.find('.item7').hasClass(pattern) && table.find('.item8').hasClass(pattern) && table.find('.item9').hasClass(pattern)) {
+    $( ".line5" ).fadeIn("slow");
+    won = 1;
+  } else if (table.find('.item2').hasClass(pattern) && table.find('.item5').hasClass(pattern) && table.find('.item8').hasClass(pattern)) {
+    $( ".line6" ).fadeIn("slow");
+    won = 1;
+  } else if (table.find('.item3').hasClass(pattern) && table.find('.item6').hasClass(pattern) && table.find('.item9').hasClass(pattern)) {
+    $( ".line7" ).fadeIn("slow");
+    won = 1;
+  } else if (table.find('.item3').hasClass(pattern) && table.find('.item5').hasClass(pattern) && table.find('.item7').hasClass(pattern)) {
+    $( ".line8" ).fadeIn("slow")
+    won = 1;
+  }
+  return won;
+}
+
+//--------------------------------------//
+
+function reset(table) {
+  table.find('td').each(function() {
+    $(this).removeClass('circle').removeClass('cross');
+    $( ".line1" ).hide();
+    $( ".line2" ).hide();
+    $( ".line3" ).hide();
+    $( ".line4" ).hide();
+    $( ".line5" ).hide();
+    $( ".line6" ).hide();
+    $( ".line7" ).hide();
+    $( ".line8" ).hide();
+  });
+}
