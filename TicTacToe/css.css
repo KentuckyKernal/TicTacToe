@@ -1,0 +1,265 @@
+body {
+    font-family: "Roboto", Arial, sans-serif;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 50px;
+    color: #FFF;
+    text-shadow: -1px -1px #333;
+    background: #333;
+}
+body h1 {
+    font-weight: bold;
+    color: #D8BFD8;
+    padding-bottom: 20px;
+    padding-top: -15px;
+}
+body .turn {
+    margin-bottom: 10px;
+}
+body table {
+    border-collapse: collapse;
+    width: 225px;
+    margin: 0 auto;
+}
+body table td {
+    width: 50px;
+    height: 75px;
+    border: 1px solid #555;
+    cursor: pointer;
+    position: relative;
+}
+body table td:before {
+    font-size: 3.5em;
+    line-height: 1;
+}
+body table td.cross:before {
+    content: "x";
+    color: lightblue;
+	position:absolute;
+	left:26px;
+	top:5px;
+}
+body table td.circle:before {
+    content: "o";
+    color: pink;
+	position:absolute;
+	left:26px;
+	top:5px;
+}
+body table td .line1 {
+    width: 180px;
+    height: 47px;
+    border-bottom: 4px solid white;
+    position: absolute;
+    left: 19px;
+    top: -8px;
+    z-index: 1;
+}
+body table td .line2 {
+    width: 190px;
+    height: 47px;
+    border-bottom: 4px solid white;
+    transform: rotate(90deg);
+    position: absolute;
+    left: -34px;
+    top: 95px;
+    z-index: 1;
+}
+body table td .line3 {
+    width: 225px;
+    height: 47px;
+    border-bottom: 4px solid white;
+    transform: rotate(45deg);
+    position: absolute;
+    left: -60px;
+    top: -5px;
+    z-index: 1;
+}
+body table td .line4 {
+    width: 180px;
+    height: 47px;
+    border-bottom: 4px solid white;
+    position: absolute;
+    left: 19px;
+    top: -8px;
+    z-index: 1;
+}
+body table td .line5 {
+    width: 180px;
+    height: 47px;
+    border-bottom: 4px solid white;
+    position: absolute;
+    left: 19px;
+    top: -8px;
+    z-index: 1;
+}
+body table td .line6 {
+    width: 190px;
+    height: 47px;
+    border-bottom: 4px solid white;
+    transform: rotate(90deg);
+    position: absolute;
+    left: -34px;
+    top: 95px;
+    z-index: 1;
+}
+body table td .line7 {
+    width: 190px;
+    height: 47px;
+    border-bottom: 4px solid white;
+    transform: rotate(90deg);
+    position: absolute;
+    left: -34px;
+    top: 95px;
+    z-index: 1;
+}
+body table td .line8 {
+    width: 225px;
+    height: 47px;
+    border-bottom: 4px solid white;
+    transform: rotate(-47deg);
+    position: absolute;
+    left: -95px;
+    top: 5px;
+    z-index: 1;
+}
+body .reset {
+    background: #555;
+    border: 1px solid #333;
+    padding: 5px 10px;
+    color: #FFF;
+    cursor: pointer;
+    font-family: "Roboto", Arial, sans-serif;
+    text-transform: uppercase;
+}
+body .reset:hover {
+    opacity: 0.8;
+}
+body .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+body .modal-content {
+    position: relative;
+    color: white;
+    background-color: #333;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #333;
+    width: 30%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+body .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+body .close:hover,
+body .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+body .modal-header {
+    padding: 2px 16px;
+    background-color: #333;
+    color: white;
+    font-family: "Roboto", Arial, sans-serif;
+}
+body .modal-body {
+    padding: 2px 16px;
+}
+body .modal-footer {
+    padding: 2px 16px;
+    background-color: #333;
+    color: white;
+    font-family: "Roboto", Arial, sans-serif;
+}
+body #myBtn {
+    background: #555;
+    border: 1px solid #333;
+    padding: 5px 10px;
+    color: #FFF;
+    cursor: pointer;
+    font-family: "Roboto", Arial, sans-serif;
+    text-transform: uppercase;
+}
+body #myBtn:hover {
+    opacity: 0.8;
+}
+body .left {
+    position: absolute;
+    left: 270px;
+    top: 132px;
+}
+body .right {
+    position: absolute;
+    right: 270px;
+    top: 130px;
+}
+body .score1 {
+    position: absolute;
+    left: 360px;
+    top: 200px;
+}
+body .arraydisplay{
+    position: absolute;
+    left: 310px;
+    top: 215px;
+}
+
+body #myBtn {
+    position: absolute;
+    right: 315px;
+    top: 200px;
+}
+body .id2 {
+    color: pink;
+    font-size: 2.0em;
+}
+body .id1 {
+    color: lightblue;
+    font-size: 2.0em;
+}
+body .inside {
+    color: gold;
+    font-size: 2.5em;
+}
+body .go{
+	font-size:1.5em;
+	
+}
